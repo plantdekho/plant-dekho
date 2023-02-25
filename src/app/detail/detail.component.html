@@ -1,47 +1,64 @@
-
- <div id="container">
+<div id="detail-body">
+  <div id="container">
     <div class="left-container">
-        <img src="https://www.fnp.com/images/pr/l/v20180518064834/beautiful-jade-plant_1.jpg" width="100%">
-
-
+      <img [src]="sanitizer.bypassSecurityTrustUrl(data.image)" width="100%" />
     </div>
     <div class="right-container">
-        <p id="title">Beautiful Jade Plant</p>
-        <p>By Green Heaven</p>
-        <p id="price"> <span><del style="font-size: 20px;">₹ 1145</del> </span>₹ 999</p>
-        <ul>
-            <li>
-                <p>Free Delivery</p>
-            </li>
+      <br />
+      <h3>{{ data.name }}</h3>
+      <!-- <h6>By PlantDekho </h6> -->
+      <p id="price">
+        <span> 999 </span> <del style="font-size: 16px">₹ 1145</del>
+      </p>
+      <h5>Shipping {{ data.shipping_cost }}</h5>
+      <i class="fa-sharp fa-solid fa-truck-fast"></i>
+      <h5>Dispatch {{ data.dispatch_date }}</h5>
+      <h5>Origin Conuntry:India</h5>
+      <!-- <ul>
+        <li>
+          <p>Free Delivery</p>
+        </li>
 
-            <li>
-                <p>Dispatch in 2- 3 days</p>
-            </li>
-            <li>
-                <p>Origin Conuntry:India </p>
-            </li>
+        <li>
+          <p></p>
+        </li>
+        <li>
+          <p>Origin Conuntry:India</p>
+        </li>
+      </ul> -->
+      <br />
+      <p>
+        Images are for reference purposes only. Actual product may vary in shape
+        or appearance.
+      </p>
 
-        </ul>
-        <br>
-        <p>Images are for reference purposes only. Actual product may vary in shape or appearance based on climate, age, height, etc. The product is replaceable but not returnable</p>
-       
-        <a href="cart.html"><button>Add to cart</button></a> 
+      <a href="cart.html">
+        <button class="button">Add to cart</button>
+      </a>
     </div>
+  </div>
 
-
-</div>
-<div>
-    <h2>Description</h2>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit necessitatibus adipisci et iusto ut nostrum rem non eaque possimus quisquam.lorem50 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia obcaecati nemo est fugiat magnam explicabo facilis. Consequatur fuga cumque, omnis magni voluptatibus provident doloremque iure expedita vitae assumenda  </p>
-</div>
-<div>
-    <h2>Plant Specification</h2>
-    <div> 
-        <ul>
-        <li>Lorem ipsum dolor sit amet.</li>
-        <li>Lorem ipsum dolor sit amet.</li>
-        <li>Lorem ipsum dolor sit amet.</li>
-        <li>Lorem ipsum dolor sit amet.</li>
-      </ul>
+  <!-- ************************** -->
+  <div id="product-detail">
+    <div>
+      <h3>Description</h3>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit
+        necessitatibus adipisci et iusto ut nostrum rem non eaque possimus
+        quisquam.lorem50 Lorem ipsum dolor, sit amet consectetur adipisicing
+        elit. Quia obcaecati nemo est fugiat magnam explicabo facilis.
+        Consequatur fuga cumque, omnis magni voluptatibus provident doloremque
+        iure expedita vitae assumenda
+      </p>
     </div>
+    <div>
+      <h3>Plant Specification</h3>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum illum,
+        praesentium vero perspiciatis quisquam enim assumenda! Inventore, ipsum
+        qui! Impedit aliquid iure similique possimus numquam labore voluptates
+        ullam quibusdam!
+      </p>
+    </div>
+  </div>
 </div>
