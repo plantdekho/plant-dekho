@@ -10,9 +10,9 @@ import { DetailComponent } from './detail/detail.component';
 import { RouterModule } from '@angular/router';
 import appRoutes from './routerConfig';
 import { AboutComponent } from './about/about.component';
-import { PolicyComponent } from './policy/policy.component';
 import { CartComponent } from './cart/cart.component';
 import { ShippingFormComponent } from './shipping-form/shipping-form.component';
+import { ShippingPolicyComponent } from './shipping-policy/shipping-policy.component';
 
 @NgModule({
   declarations: [
@@ -22,9 +22,9 @@ import { ShippingFormComponent } from './shipping-form/shipping-form.component';
     FooterComponent,
     DetailComponent,
     AboutComponent,
-    PolicyComponent,
     CartComponent,
-    ShippingFormComponent
+    ShippingFormComponent,
+    ShippingPolicyComponent
   ],
   imports: [
     BrowserModule,
