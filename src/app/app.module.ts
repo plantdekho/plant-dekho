@@ -13,6 +13,9 @@ import { AboutComponent } from './about/about.component';
 import { CartComponent } from './cart/cart.component';
 import { ShippingFormComponent } from './shipping-form/shipping-form.component';
 import { ShippingPolicyComponent } from './shipping-policy/shipping-policy.component';
+import { BlogComponent } from './blog/blog.component';
+
+
 
 @NgModule({
   declarations: [
@@ -24,12 +27,13 @@ import { ShippingPolicyComponent } from './shipping-policy/shipping-policy.compo
     AboutComponent,
     CartComponent,
     ShippingFormComponent,
-    ShippingPolicyComponent
+    ShippingPolicyComponent,
+    BlogComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes,{scrollPositionRestoration:'enabled'})
   ],
   providers: [],
   bootstrap: [AppComponent]

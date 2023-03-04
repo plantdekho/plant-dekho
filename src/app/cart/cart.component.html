@@ -1,46 +1,54 @@
-
- <div class="wrapper">
-    <h1>Shopping Cart</h1>
-    <div class="project">
-        <div class="shop">
-            <div class="box">
-                <img src="https://www.fnp.com/images/pr/l/v20180518064834/beautiful-jade-plant_1.jpg">
-                <div class="content">
-                    <h3>Jade plant</h3>
-                    <h4>Price: $40</h4>
-                    <p class="unit">Quantity: <input name="" value="2"></p>
-                    <p class="btn-area"><i aria-hidden="true" class="fa fa-trash"></i> <span class="btn2">Remove</span></p>
-                </div>
-            </div>
-            <div class="box">
-                <img src="https://www.fnp.com/images/pr/l/v20180518064834/beautiful-jade-plant_1.jpg">
-                <div class="content">
-                    <h3>Jade plant</h3>
-                    <h4>Price: $40</h4>
-                    <p class="unit">Quantity: <input name="" value="2"></p>
-                    <p class="btn-area"><i aria-hidden="true" class="fa fa-trash"></i> <span class="btn2">Remove</span></p>
-                </div>
-            </div>
-            <div class="box">
-                <img src="https://www.fnp.com/images/pr/l/v20180518064834/beautiful-jade-plant_1.jpg">
-                <div class="content">
-                    <h3>Jade plant</h3>
-                    <h4>Price: $40</h4>
-                    <p class="unit">Quantity: <input name="" value="2"></p>
-                    <p class="btn-area"><i aria-hidden="true" class="fa fa-trash"></i> <span class="btn2">Remove</span></p>
-                </div>
-            </div>
-            
-            
-        </div>
-        <div class="right-bar">
-            <p><span>Subtotal</span> <span>$120</span></p>
-            <hr>
-            <!-- <p><span>Tax (5%)</span> <span>$6</span></p> -->
-            <hr>
-            <p><span>Shipping</span> <span>$15</span></p>
-            <hr>
-            <p><span>Total</span> <span>$141</span></p><a routerLink="shipping_form"><i class="fa fa-shopping-cart"></i>Checkout</a>
-        </div>
+<div class="wrapper">
+  <h1>Shopping Cart</h1>
+  <!-- ---------------empty-cart------- -->
+  <div class="empty-cart" *ngIf="items.length <= 0">
+    <div>
+      <h4>your cart is empty</h4>
+      <br>
+      <button class="button" routerLink="" >Shop Now</button>
     </div>
+  </div>
+  <!-- ------------------------>
+
+  <div class="project" *ngIf="items.length > 0">
+    <div class="shop">
+      <div class="box" *ngFor="let item of items">
+        <img [src]="sanitizer.bypassSecurityTrustUrl(item.image)" />
+        <div class="content">
+          <h3>{{ item.name }}</h3>
+          <h4>Price: {{ item.price }}</h4>
+          <div class="unit">
+            <label for="qty">Quantity </label>
+            <select name="" id="qty">
+            <option value="one">1</option>
+            <option value="two">2</option>
+            <option value="three">3</option>
+            <option value="four">4</option>
+          </select> </div>
+          <p class="btn-area" (click)="removedata(item)">
+            <i aria-hidden="true" class="fa fa-trash"></i>
+            <span class="btn2">Remove</span>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="right-bar">
+      <p><span>Subtotal</span> <span></span></p>
+      <hr />
+      <!-- <p><span>Tax (5%)</span> <span>$6</span></p> -->
+      <hr />
+      <p><span>Shipping</span> <span></span></p>
+      <hr />
+      <p>
+        <span>Total</span> <span> {{ grandtotal }} </span>
+      </p>
+      <a routerLink="shipping_form"
+        ><i class="fa fa-shopping-cart"></i>Checkout</a
+      >
+    </div>
+  </div>
 </div>
+<!-- <div *ngFor="let hello of item"  >
+    {{hello.name}}
+
+</div> -->

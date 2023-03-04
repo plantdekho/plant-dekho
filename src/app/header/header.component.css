@@ -2,9 +2,12 @@ header {
   background-color: #fff;
   padding: 20px 0;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0%;
 }
 
 .container {
+  
   /* max-width: 1140px; */
   margin: 0 auto;
   display: flex;
@@ -60,8 +63,9 @@ nav {
   background-color: #149253;
   padding: 20px 0;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1);
-  position: sticky;
+  /* position: sticky;
   top: 0%;
+ */
 }
 
 .container {

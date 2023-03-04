@@ -1,6 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
+import { CartApiService } from '../cart-api.service';
+import { Indoor_Plants, Product } from '../product';
+import { indoorplant, products } from '../product-json';
 
 @Component({
   selector: 'app-detail',
@@ -8,11 +11,29 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./detail.component.css'],
 })
 export class DetailComponent implements OnInit {
-  constructor(private route: ActivatedRoute, public sanitizer: DomSanitizer) {}
-  data: any;
+  constructor(
+    private route: ActivatedRoute,
+    public sanitizer: DomSanitizer,
+    private cartapi: CartApiService
+  ) {}
+  dataItem: any;
+  name: any;
+  items: Product[] = products;
+  datas: Indoor_Plants[] = indoorplant;
+  item: any;
 
   ngOnInit(): void {
-    this.data = JSON.parse(history.state.data);
-    console.log(this.data);
+    this.datas.forEach((a) => {
+      this.items.push(a)
+    });
+    this.dataItem = this.route.params.subscribe((params) => {
+      this.name = params['name'];      
+      this.item = this.items.find((item) => item.name === this.name);
+     // this.item=this.datas.find((data)=>data.name===this.name);
+    });
+  }
+  addtocart(item: any) {
+    // this.cartapi.addToCart(item);
+    this.cartapi.addtocart(item);
   }
 }

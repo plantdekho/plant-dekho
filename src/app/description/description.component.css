@@ -10,7 +10,7 @@
 }
 
 .box-banner img {
-  border-radius: 50%;
+  border-radius: 8%;
   width: 100%;
  
 }
@@ -26,6 +26,12 @@
 .data_field {
   border: 0.5px solid black;
   padding: 5%;
+}
+.product{
+  cursor: pointer;
+}
+.json-heading{
+  text-align: center;
 }
 
 @media (max-width: 590px) {

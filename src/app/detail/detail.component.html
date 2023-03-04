@@ -1,39 +1,27 @@
 <div id="detail-body">
   <div id="container">
     <div class="left-container">
-      <img [src]="sanitizer.bypassSecurityTrustUrl(data.image)" width="100%" />
+      <img [src]="sanitizer.bypassSecurityTrustUrl(item.image)" width="100%" />
     </div>
     <div class="right-container">
       <br />
-      <h3>{{ data.name }}</h3>
+      <h3>{{ item.name }}</h3>
       <!-- <h6>By PlantDekho </h6> -->
       <p id="price">
         <span> 999 </span> <del style="font-size: 16px">₹ 1145</del>
       </p>
-      <h5>Shipping {{ data.shipping_cost }}</h5>
+      <h5>Shipping {{ item.shipping_cost }}</h5>
       <i class="fa-sharp fa-solid fa-truck-fast"></i>
-      <h5>Dispatch {{ data.dispatch_date }}</h5>
+      <h5>Dispatch {{ item.dispatch_date }}</h5>
       <h5>Origin Conuntry:India</h5>
-      <!-- <ul>
-        <li>
-          <p>Free Delivery</p>
-        </li>
-
-        <li>
-          <p></p>
-        </li>
-        <li>
-          <p>Origin Conuntry:India</p>
-        </li>
-      </ul> -->
       <br />
       <p>
         Images are for reference purposes only. Actual product may vary in shape
         or appearance.
       </p>
 
-      <a href="cart.html">
-        <button class="button">Add to cart</button>
+      <a>
+        <button class="button" (click)="addtocart(item)" >Add to cart</button>
       </a>
     </div>
   </div>

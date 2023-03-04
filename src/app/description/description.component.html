@@ -45,7 +45,7 @@
   </div>
   <br /><br />
   <!-- --------------------------------------------- -->
-  <div id="best_seller">
+  <div class="json-heading">
     <h3>BEST SELLER</h3>
   </div>
   <br />
@@ -53,8 +53,8 @@
   <div class="grid-container">
     <div class="data_field" *ngFor="let item of item">
       <!-- ------------------------------ -->
-      <a  class="product" (click)="transferdata(item)">
-        <img class="images" src="{{ item.image }}" />
+      <a class="product" (click)="transferdata(item)">
+        <img class="images" [src]="item.image" />
       </a>
       <!-- ------------------------------ -->
       <h5>{{ item.name }}</h5>
@@ -66,10 +66,36 @@
         </span>
       </h5>
       <!-- ------------------------------ -->
-      <button class="button">Add to cart</button>
+      <button class="button" (click)="addtocart(item)">Add to cart</button>
       <br />
       <!-- ------------------------------ -->
     </div>
   </div>
+  <!-- ......................///////////////// -->
+  <div class="json-heading">
+    <br />
+    <h3>Indoor Plants</h3>
+    <br />
+  </div>
+  <div class="grid-container">
+    <div class="data_field" *ngFor="let data of data">
+      <a class="product" (click)="transferdata(data)">
+        <img class="images" [src]="data.image" />
+      </a>
+      <!-- ------------------------------ -->
+      <h5>{{ data.name }}</h5>
+      <!-- ------------------------------ -->
+      <h5 class="price" style="font-size: 26px">
+        900
+        <span style="font-size: 15px">
+          <del>1200</del>
+        </span>
+      </h5>
+      <!-- ------------------------------ -->
+      <button class="button" (click)="addtocart(data)">Add to cart</button>
+      <br />
+    </div>
+  </div>
+
   <!-- --------------------------------------------- -->
 </div>

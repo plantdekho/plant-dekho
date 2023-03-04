@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 import { AboutComponent } from './about/about.component';
 import { AppComponent } from './app.component';
+import { BlogComponent } from './blog/blog.component';
 import { CartComponent } from './cart/cart.component';
 import { DescriptionComponent } from './description/description.component';
 import { DetailComponent } from './detail/detail.component';
@@ -24,7 +25,7 @@ const appRoutes: Routes = [
     },
    
     {
-        path: 'detail',
+        path: 'detail/:name',
         component: DetailComponent
     },
    
@@ -35,6 +36,10 @@ const appRoutes: Routes = [
     {
         path: 'shipping_policy',
         component: ShippingPolicyComponent
+    },
+    {
+        path:'blog',
+        component:BlogComponent
     }
 ];
 export default appRoutes;
