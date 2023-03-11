@@ -25,8 +25,9 @@
 
 
 
+
 #price {
-    /* margin: 13% 0% 3% 4%; */
+   
     color: #129674;
     font-size: 29px;
 }
@@ -34,9 +35,7 @@
 
 /* ********************************** */
 
-#product-detail{
-    padding: 4%;
-}
+
 @media(max-width:600px) {
     #container {
         flex-direction: column;

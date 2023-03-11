@@ -21,7 +21,7 @@
       </p>
 
       <a>
-        <button class="button" (click)="addtocart(item)" >Add to cart</button>
+        <button class="button" (click)="addtocart(item)">Add to cart</button>
       </a>
     </div>
   </div>
@@ -29,7 +29,9 @@
   <!-- ************************** -->
   <div id="product-detail">
     <div>
-      <h3>Description</h3>
+      <br />
+      <div><h3>Description</h3></div>
+      <br />
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit
         necessitatibus adipisci et iusto ut nostrum rem non eaque possimus
@@ -40,13 +42,43 @@
       </p>
     </div>
     <div>
-      <h3>Plant Specification</h3>
+      <br>
+      <div><h3>Plant Specification</h3></div>
+      <br>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum illum,
         praesentium vero perspiciatis quisquam enim assumenda! Inventore, ipsum
         qui! Impedit aliquid iure similique possimus numquam labore voluptates
         ullam quibusdam!
       </p>
+    </div>
+  </div>
+</div>
+
+<div class="body-content">
+  <div>
+    <h3>You May Also Like</h3>
+  </div>
+  <br>
+  <div class="grid-container">
+    <div class="data_field" *ngFor="let item of items">
+      <!-- ------------------------------ -->
+      <a class="product">
+        <img class="images" [src]="item.image" (click)="transferdata(item)" />
+      </a>
+      <!-- ------------------------------ -->
+      <h5>{{ item.name }}</h5>
+      <!-- ------------------------------ -->
+      <h5 class="price" style="font-size: 26px">
+        900
+        <span style="font-size: 15px">
+          <del>1200</del>
+        </span>
+      </h5>
+      <!-- ------------------------------ -->
+      <button class="button" (click)="addtocart(item)">Add to cart</button>
+      <br />
+      <!-- ------------------------------ -->
     </div>
   </div>
 </div>

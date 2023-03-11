@@ -11,6 +11,7 @@ import { indoorplant, products } from '../product-json';
 })
 export class DescriptionComponent implements OnInit {
   
+  
   item: Product[] = products;
   data:Indoor_Plants[] = indoorplant;
   constructor(
@@ -24,6 +25,7 @@ export class DescriptionComponent implements OnInit {
       Object.assign(a,{quantity:1,total:a.price});
     })
   }
+ 
 
  
   transferdata(itm: any) {
@@ -34,4 +36,5 @@ export class DescriptionComponent implements OnInit {
     // this.cartapi.addToCart(item);
     this.cartapi.addtocart(item);
   }
+  
 }

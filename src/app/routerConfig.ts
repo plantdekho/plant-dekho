@@ -3,6 +3,7 @@ import { AboutComponent } from './about/about.component';
 import { AppComponent } from './app.component';
 import { BlogComponent } from './blog/blog.component';
 import { CartComponent } from './cart/cart.component';
+import { IndoorPlantsComponent } from './collection/indoor-plants/indoor-plants.component';
 import { DescriptionComponent } from './description/description.component';
 import { DetailComponent } from './detail/detail.component';
 
@@ -40,6 +41,10 @@ const appRoutes: Routes = [
     {
         path:'blog',
         component:BlogComponent
+    },
+    {
+        path:'indoor-plants',
+        component:IndoorPlantsComponent
     }
 ];
 export default appRoutes;

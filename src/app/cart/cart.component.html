@@ -32,22 +32,23 @@
         </div>
       </div>
     </div>
-    <div class="right-bar">
-      <p><span>Subtotal</span> <span></span></p>
+    <div class="right-bar " >
+      
+      <p><span>Total</span> <span>{{total}}</span></p>
       <hr />
-      <!-- <p><span>Tax (5%)</span> <span>$6</span></p> -->
+     
       <hr />
-      <p><span>Shipping</span> <span></span></p>
+      <p><span>Shipping</span> <span>60</span></p>
       <hr />
       <p>
-        <span>Total</span> <span> {{ grandtotal }} </span>
+        <span>Grandtotal</span><span>{{grandtotal}} </span>
       </p>
-      <a routerLink="shipping_form"
-        ><i class="fa fa-shopping-cart"></i>Checkout</a
-      >
+      
+      <a  (click)="transferdata()" ><i class="fa fa-shopping-cart"></i>Checkout</a>
     </div>
   </div>
 </div>
+
 <!-- <div *ngFor="let hello of item"  >
     {{hello.name}}
 

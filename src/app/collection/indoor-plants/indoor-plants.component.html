@@ -1,0 +1,24 @@
+<h2>Indoor Plants</h2>
+<div class="description-body">
+  <div class="grid-container">
+    <div class="data_field" *ngFor="let data of data">
+      <a class="product" (click)="transferdata(data)  " >
+        <img class="images" [src]="data.image" />
+      </a>
+      <!-- ------------------------------ -->
+      <h5>{{ data.name }}</h5>
+      <!-- ------------------------------ -->
+      <h5 class="price" style="font-size: 26px">
+        900
+        <span style="font-size: 15px">
+          <del>1200</del>
+        </span>
+      </h5>
+      <!-- ------------------------------ -->
+      <button class="button" (click)="addtocart(data)" >Add to cart</button>
+      <br />
+    </div>
+    <br>
+  </div>
+</div>
+<br>

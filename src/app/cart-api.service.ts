@@ -1,18 +1,19 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-// import { LocalStorageService } from 'ngx-webstorage';
+
 
 @Injectable({
   providedIn: 'root',
 })
 export class CartApiService {
   items = JSON.parse(localStorage.getItem('cartItems') as string) || [];
+  shipping: number= 60;
 
   cartDataList: any = [];
   productlist = new BehaviorSubject<any>([]);
   cart: any = JSON.parse(localStorage.getItem('data') as string);
 
-  constructor() {}
+  constructor( ) {}
   getProductData() {
     return this.productlist.asObservable();
   }
@@ -22,43 +23,51 @@ export class CartApiService {
 
   addtocart(item: any) {
     const index = this.items.findIndex((i: { id: any; }) => i.id === item.id);
+    console.log(index);
     if (index === -1) {
       this.items.push(item);
       localStorage.setItem('cartItems', JSON.stringify(this.items));
+      this.getcartcount();
+
     } 
     else{
       window.alert("item already exist");
     }
-   
 
-    // this.items.push(item);
-    // localStorage.setItem('cartItems', JSON.stringify(this.items));
+  }
+  getcartcount(){
+    return this.items.length;
   }
   getCartItems() {
     return this.items;
   }
 
-  // addToCart(product: any) {
-  //   this.cartDataList.push(product);
-  //   localStorage.setItem('data', JSON.stringify(this.cartDataList));
-  //   this.productlist.next(this.cartDataList);    
-  //   this.getTotal();
-    
-  // }
+  getgrandtotal(){
+    let grandtotal= 0;
+    this.items.map((a: any) => {
+      grandtotal += a.price ;
+
+    });
+    return grandtotal + this.shipping;
+
+  }
   
   getTotal(): number {
-    let grandtotal = 0;
-    this.cartDataList.map((a: any) => {
-      grandtotal += a.price;
+    let total = 0;
+    this.items.map((a: any) => {
+      total += a.price ;
+
     });
-    return grandtotal;
+    return total;
   }
 
   removeCartItem(product: any) {
     const index = this.items.indexOf(product);
     if (index !== -1) {
+      window.location.reload();
       this.items.splice(index, 1);
       localStorage.setItem('cartItems', JSON.stringify(this.items));
+     
       this.getTotal();
     }
 

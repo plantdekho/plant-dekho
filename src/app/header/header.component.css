@@ -2,47 +2,24 @@ header {
   background-color: #fff;
   padding: 20px 0;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1);
-  position: sticky;
+  position: fixed;
+  width: 100%;
   top: 0%;
+  z-index: 100;
 }
-
-.container {
-  
-  /* max-width: 1140px; */
-  margin: 0 auto;
+.container-header{
+  align-items: center;
+  margin: 0 1%;
   display: flex;
   justify-content: space-between;
-  align-items: center;
 }
+
 .logo {
   width: 150px;
 }
 
 .logo img {
   width: 100%;
-}
-
-.search-form {
-  width: 70%;
-  display: flex;
-  align-items: center;
-}
-
-.search-form input[type="text"] {
-  width: 50%;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  margin-right: 10px;
-}
-
-.search-form button[type="submit"] {
-  padding: 10px 20px;
-  background-color: #149253;
-  color: #fff;
-  border: 0;
-  border-radius: 4px;
-  cursor: pointer;
 }
 
 .cart-button a {
@@ -58,33 +35,20 @@ header {
   font-size: 20px;
 }
 
+
+.toggle{
+  display: none;
+}
 /* --------------------------------------navbar-------------------------- */
 nav {
+  margin-top: 77px;
   background-color: #149253;
   padding: 20px 0;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1);
-  /* position: sticky;
-  top: 0%;
- */
-}
 
-.container {
-  max-width: 1140px;
-  margin: 0 auto;
-}
-
-.navbar-toggle {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  display: none;
 }
 
 .navbar-links {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  list-style: none;
   margin: 0;
   padding: 0;
 }
@@ -105,31 +69,29 @@ nav {
 .navbar-links a:hover {
   background-color: #57c689;
 }
+/* -----------mobile nav-------------- */
+#mobile-nav ul li{
+  list-style: none;
+  text-align: center;
+  padding: 16px 0px;
+
+}
+#mobile-nav ul li a{
+  color: black;
+  padding: 5px;
+  font-size: 1.5rem;
+}
+
+
+
 
 @media (max-width: 767px) {
-  .navbar-toggle {
+  
+  nav{
+    display: none;
+  }
+  .toggle{
     display: block;
   }
 
-  .navbar-links {
-    position: absolute;
-    top: 70px;
-    right: 0;
-    background-color: #333;
-    width: 100%;
-    height: 0;
-    overflow: hidden;
-    transition: height 0.35s ease;
-  }
-
-  .navbar-links.show {
-    height: 200px;
-  }
-
-  .navbar-links li {
-    display: block;
-    margin: 0;
-    width: 100%;
-    text-align: center;
-  }
 }

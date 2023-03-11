@@ -14,6 +14,7 @@ import { CartComponent } from './cart/cart.component';
 import { ShippingFormComponent } from './shipping-form/shipping-form.component';
 import { ShippingPolicyComponent } from './shipping-policy/shipping-policy.component';
 import { BlogComponent } from './blog/blog.component';
+import { IndoorPlantsComponent } from './collection/indoor-plants/indoor-plants.component';
 
 
 
@@ -28,7 +29,9 @@ import { BlogComponent } from './blog/blog.component';
     CartComponent,
     ShippingFormComponent,
     ShippingPolicyComponent,
-    BlogComponent
+    BlogComponent,
+   
+    IndoorPlantsComponent
   ],
   imports: [
     BrowserModule,

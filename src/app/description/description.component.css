@@ -1,18 +1,14 @@
-.description-body {
-  padding: 10px;
-}
 .box-banner {
   display: flex;
   justify-content: space-around;
 }
-.box-banner div{
- width: 180px;
+.box-banner div {
+  width: 180px;
 }
 
 .box-banner img {
   border-radius: 8%;
   width: 100%;
- 
 }
 .box-banner h5 {
   text-align: center;
@@ -23,22 +19,16 @@
   height: 60vh;
 }
 
-.data_field {
-  border: 0.5px solid black;
-  padding: 5%;
-}
-.product{
-  cursor: pointer;
-}
-.json-heading{
-  text-align: center;
-}
-
 @media (max-width: 590px) {
+  .banner-container img{
+    height: auto;
+  }
   .box-banner {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-  grid-column-gap: 30px;
-  grid-row-gap: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    grid-column-gap: 30px;
+    grid-row-gap: 30px;
   }
 }
+
+

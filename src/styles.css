@@ -4,6 +4,10 @@
   margin: 0;
   font-family: sans-serif;
 }
+.body-content{
+  padding: 10px;
+}
+
 h3 {
   font-weight: revert;
   letter-spacing: -0.02em;
@@ -34,6 +38,16 @@ img {
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   grid-column-gap: 40px;
   grid-row-gap: 50px;
+}
+.data_field {
+  border: 0.5px solid black;
+  padding: 5%;
+}
+.product{
+  cursor: pointer;
+}
+.price{
+  font-size: 26px
 }
 
 @media (max-width: 767px) {

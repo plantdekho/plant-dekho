@@ -90,6 +90,7 @@ body {
 	margin-bottom: 25px;
 }
 .right-bar p {
+	flex-basis: 40%;
 	display: flex;
 	justify-content: space-between;
 	margin-bottom: 30px;
