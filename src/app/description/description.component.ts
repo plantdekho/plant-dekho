@@ -21,9 +21,7 @@ export class DescriptionComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.item.forEach((a:any)=>{
-      Object.assign(a,{quantity:1,total:a.price});
-    })
+    
   }
  
 
@@ -33,8 +31,10 @@ export class DescriptionComponent implements OnInit {
    
   }
   addtocart(item: any) {
-    // this.cartapi.addToCart(item);
     this.cartapi.addtocart(item);
+    var cartItem = this.cartapi.getcartcount();
+    this.cartapi.messageEmitter.emit(cartItem);
+        
   }
   
 }

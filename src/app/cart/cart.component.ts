@@ -14,22 +14,26 @@ export class CartComponent implements OnInit {
   products: any = [];
   allproducts: any = 0;
   public total!: number;
-  public grandtotal!:number;
+  public grandtotal!: number;
 
-  constructor(private cartapi: CartApiService, public sanitizer: DomSanitizer, private router:Router ) {
+  constructor(private cartapi: CartApiService, public sanitizer: DomSanitizer, private router: Router) {
     this.items = this.cartapi.getCartItems();
   }
 
   ngOnInit(): void {
     this.total = this.cartapi.getTotal();
-    this.grandtotal= this.cartapi.getgrandtotal();
+    this.grandtotal = this.cartapi.getgrandtotal();
   }
 
   removedata(product: any) {
     this.cartapi.removeCartItem(product);
+    this.cartapi.messageEmitter.emit(this.cartapi.getcartcount());
   }
-  transferdata(){
+  transferdata() {
     this.router.navigate(['shipping_form']);
 
+  }
+  onOptionsSelected(value: String, itemId: any) {
+    this.cartapi.changePrice(Number(value), itemId);
   }
 }

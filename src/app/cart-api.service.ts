@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
 
@@ -6,14 +6,17 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root',
 })
 export class CartApiService {
+
+
+  messageEmitter = new EventEmitter<String>();
   items = JSON.parse(localStorage.getItem('cartItems') as string) || [];
-  shipping: number= 60;
+  shipping: number = 60;
 
   cartDataList: any = [];
   productlist = new BehaviorSubject<any>([]);
   cart: any = JSON.parse(localStorage.getItem('data') as string);
 
-  constructor( ) {}
+  constructor() { }
   getProductData() {
     return this.productlist.asObservable();
   }
@@ -27,35 +30,33 @@ export class CartApiService {
     if (index === -1) {
       this.items.push(item);
       localStorage.setItem('cartItems', JSON.stringify(this.items));
-      this.getcartcount();
-
-    } 
-    else{
+    }
+    else {
       window.alert("item already exist");
     }
 
   }
-  getcartcount(){
+  getcartcount() {
     return this.items.length;
   }
   getCartItems() {
     return this.items;
   }
 
-  getgrandtotal(){
-    let grandtotal= 0;
+  getgrandtotal() {
+    let grandtotal = 0;
     this.items.map((a: any) => {
-      grandtotal += a.price ;
+      grandtotal += a.price * a.quantity;
 
     });
     return grandtotal + this.shipping;
 
   }
-  
+
   getTotal(): number {
     let total = 0;
     this.items.map((a: any) => {
-      total += a.price ;
+      total += a.price * a.quantity;
 
     });
     return total;
@@ -67,27 +68,18 @@ export class CartApiService {
       window.location.reload();
       this.items.splice(index, 1);
       localStorage.setItem('cartItems', JSON.stringify(this.items));
-     
       this.getTotal();
     }
-
-    
   }
+
+  changePrice(value: number, itemId: any) {
+    console.log("value: " + value + " itemId: " + itemId);
+    const index = this.items.findIndex((i: { id: any; }) => i.id === itemId);
+    console.log(index);
+    this.items[index].quantity = value;
+    localStorage.setItem('cartItems', JSON.stringify(this.items));   
+    window.location.reload(); 
+  }
+
 }
 
-
-//   const data = JSON.parse(localStorage.getItem('data') as string);
-    //  data.splice(0,1);
-    //  localStorage.setItem('data', JSON.stringify(data));
-    // data.map((a:any,index:any)=>{
-    //   if(product.id== a.id){
-    //     delete data[index];
-    //   }
-
-    // })
-    // this.cartDataList.map((a: any, index: any) => {
-    //   if (product.id == a.id) {
-    //     this.cartDataList.splice(index, 1);
-
-    //   }
-    // });

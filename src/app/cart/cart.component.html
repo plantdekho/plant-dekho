@@ -5,7 +5,7 @@
     <div>
       <h4>your cart is empty</h4>
       <br>
-      <button class="button" routerLink="" >Shop Now</button>
+      <button class="button" routerLink="">Shop Now</button>
     </div>
   </div>
   <!-- ------------------------>
@@ -16,15 +16,16 @@
         <img [src]="sanitizer.bypassSecurityTrustUrl(item.image)" />
         <div class="content">
           <h3>{{ item.name }}</h3>
-          <h4>Price: {{ item.price }}</h4>
+          <h4>Price: {{ item.price * item.quantity }}</h4>
           <div class="unit">
             <label for="qty">Quantity </label>
-            <select name="" id="qty">
-            <option value="one">1</option>
-            <option value="two">2</option>
-            <option value="three">3</option>
-            <option value="four">4</option>
-          </select> </div>
+            <select name="" id="qty" #qty (change)='onOptionsSelected(qty.value, item.id)' [value]=item.quantity>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+            </select>
+          </div>
           <p class="btn-area" (click)="removedata(item)">
             <i aria-hidden="true" class="fa fa-trash"></i>
             <span class="btn2">Remove</span>
@@ -32,24 +33,19 @@
         </div>
       </div>
     </div>
-    <div class="right-bar " >
-      
+    <div class="right-bar ">
+
       <p><span>Total</span> <span>{{total}}</span></p>
       <hr />
-     
+
       <hr />
       <p><span>Shipping</span> <span>60</span></p>
       <hr />
       <p>
         <span>Grandtotal</span><span>{{grandtotal}} </span>
       </p>
-      
-      <a  (click)="transferdata()" ><i class="fa fa-shopping-cart"></i>Checkout</a>
+
+      <a (click)="transferdata()"><i class="fa fa-shopping-cart"></i>Checkout</a>
     </div>
   </div>
 </div>
-
-<!-- <div *ngFor="let hello of item"  >
-    {{hello.name}}
-
-</div> -->

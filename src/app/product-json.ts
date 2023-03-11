@@ -11,6 +11,7 @@ export const products: Product[] = [
     plant_type: 'Indoor',
     dispatch_date: 'Within 3-5 days',
     shipping_cost: '30',
+    quantity : 1
 
     // combo_plant_description: null,
   },
@@ -25,7 +26,7 @@ export const products: Product[] = [
     plant_type: 'Indoor',
     dispatch_date: 'Within 3-5 days',
     shipping_cost: '30',
-
+    quantity : 1
     // combo_plant_description: null,
   },
   {
@@ -39,7 +40,7 @@ export const products: Product[] = [
     plant_type: 'Indoor',
     dispatch_date: 'Within 3-5 days',
     shipping_cost: '30',
-
+    quantity : 1
     // combo_plant_description: null,
   },
   {
@@ -53,7 +54,7 @@ export const products: Product[] = [
     plant_type: 'Indoor',
     dispatch_date: 'Within 3-5 days',
     shipping_cost: '30',
-
+    quantity : 1
     // combo_plant_description: null,
   },
   {
@@ -67,7 +68,7 @@ export const products: Product[] = [
     plant_type: 'Indoor',
     dispatch_date: 'Within 3-5 days',
     shipping_cost: '30',
-
+    quantity : 1
     // combo_plant_description: null,
   },
 ];
@@ -83,7 +84,7 @@ export const products: Product[] = [
     plant_type: 'Indoor',
     dispatch_date: 'Within 3-5 days',
     shipping_cost: '30',
-
+    quantity : 1
     // combo_plant_description: null,
   },
   {
@@ -97,7 +98,7 @@ export const products: Product[] = [
     plant_type: 'Indoor',
     dispatch_date: 'Within 3-5 days',
     shipping_cost: '30',
-
+    quantity : 1
     // combo_plant_description: null,
   },
   {
@@ -111,7 +112,7 @@ export const products: Product[] = [
     plant_type: 'Indoor',
     dispatch_date: 'Within 3-5 days',
     shipping_cost: '30',
-
+    quantity : 1
     // combo_plant_description: null,
   },
 

@@ -7,6 +7,7 @@ export interface Product{
     plant_type: string;
     dispatch_date: string;
     shipping_cost:string;
+    quantity:number;
     // combo_plant_description?:string
 
 }
@@ -19,5 +20,6 @@ export interface Indoor_Plants{
     plant_type: string;
     dispatch_date: string;
     shipping_cost:string;
+    quantity:number;
 
 }

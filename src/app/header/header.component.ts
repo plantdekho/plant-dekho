@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CartApiService } from '../cart-api.service';
 
 
@@ -16,8 +15,10 @@ export class HeaderComponent implements OnInit {
   constructor(private cartapi : CartApiService) { }
 
   ngOnInit(): void {
-    this.cartcount= this.cartapi.getcartcount();
-
+    this.cartcount = this.cartapi.getcartcount();
+    this.cartapi.messageEmitter.subscribe(val => {
+      this.cartcount = Number(val);
+    });
   }
  
 
